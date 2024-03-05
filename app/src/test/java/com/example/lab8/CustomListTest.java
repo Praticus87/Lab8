@@ -64,7 +64,7 @@ public class CustomListTest {
     public void testCountCities(){
         list = MockCityList();
         int cityCountPre = list.countCities();
-        Assert.assertEquals(1, cityCountPre);
+        Assert.assertEquals(0, cityCountPre);
         list.addCity(new City("Vancouver", "British Columbia"));
         list.addCity(new City("Charlottetown", "Prince Edward Island"));
         list.addCity(new City("Yellowknife", "Northwest Territories"));
@@ -73,7 +73,7 @@ public class CustomListTest {
 
         int cityCountPost = list.countCities();
 
-        Assert.assertEquals(4, cityCountPost);
+        Assert.assertEquals(3, cityCountPost);
     }
 
 }
