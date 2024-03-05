@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 //import org.junit.Before;
+import org.junit.Assert;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -57,6 +58,22 @@ public class CustomListTest {
         City city = new City("Vancouver", "British Columbia");
         assertThrows( IllegalArgumentException.class, () -> {
             list.delete(city); });
+    }
+
+    @Test
+    public void testCountCities(){
+        list = MockCityList();
+        int cityCountPre = list.countCities();
+        Assert.assertEquals(1, cityCountPre);
+        list.addCity(new City("Vancouver", "British Columbia"));
+        list.addCity(new City("Charlottetown", "Prince Edward Island"));
+        list.addCity(new City("Yellowknife", "Northwest Territories"));
+
+
+
+        int cityCountPost = list.countCities();
+
+        Assert.assertEquals(4, cityCountPost);
     }
 
 }
