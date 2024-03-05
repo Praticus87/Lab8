@@ -17,11 +17,16 @@ public class CustomList extends ArrayAdapter<City> {
     private ArrayList<City> cities;
     private Context context;
 
+
     public CustomList(Context context, ArrayList<City> cities) {
         super(context, 0, cities);
         this.cities = cities;
         this.context = context;
     }
+    /**
+     * create a mocklist for my citylist * @return
+     */
+
 
     @NonNull
     @Override
